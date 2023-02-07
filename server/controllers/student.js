@@ -1,8 +1,8 @@
-import student from "../models/student-model.js";
+import studentData from "../models/student-model.js";
 
 export const getStudents = async (req, res) => {
   try {
-    const allStudents = await student.find();
+    const allStudents = await studentData.find();
     res.status(200).json(allStudents);
   } catch (error) {
     console.log(error);
@@ -11,8 +11,8 @@ export const getStudents = async (req, res) => {
 };
 
 export const createStudent = async (req, res) => {
-  const studentInfo = req.body;
-  const newStudent = new student(studentInfo);
+  const student = req.body;
+  const newStudent = new studentData(student);
   try {
     await newStudent.save();
     res.status(200).json(newStudent);
