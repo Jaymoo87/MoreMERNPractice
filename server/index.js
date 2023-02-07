@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
-import studentRouter from "./routes/students.js";
+import studentRouter from "./routes/student.js";
 
 const app = express();
 
